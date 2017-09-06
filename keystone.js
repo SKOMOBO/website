@@ -28,7 +28,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'port': 1025
+	'port': 1025,
 });
 
 // Load your project's Models
