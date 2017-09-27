@@ -4,8 +4,6 @@ require('dotenv').config();
 
 // Require keystone
 var keystone = require('keystone');
-var cons = require('consolidate');
-var nunjucks = require('nunjucks');
 
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
@@ -15,12 +13,11 @@ keystone.init({
 	'name': 'skomobo',
 	'brand': 'skomobo',
 
-	'less': 'public',
+	'stylus': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
-	'view engine': '.html',
-	'custom engine': cons.nunjucks,
+	'view engine': 'pug',
 
 	'emails': 'templates/emails',
 
@@ -28,7 +25,6 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'port': 1025,
 });
 
 // Load your project's Models
