@@ -1,14 +1,13 @@
-version: "3.3"
-
+version: "3"
+# version: "2"
 services:
-
   database:
+    container_name: "skomobo_db"
     image: mvertes/alpine-mongo
-    container_name: "mongodb"
     ports: 
-      - 27017: 27017
+      - 27017:27017
 
-    volumes:
-      - ./database: /data/db
+    volumes: 
+      - ./database:/data/db
 
     restart: always
