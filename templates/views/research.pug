@@ -11,18 +11,19 @@ block content
 			each paper in papers
 				p Should this have a paper description?
 				p needs to be dynamic so that we add papers and it auto adjusts to include them on page
-				p also needs pagination
-				a(href = paper.path) 
-					img(src="images/pdf.png", width="300px")
-				h3=paper.name
+				p also needs pagination. The paper name and file name get stored in the database
+				
+				div(width="100px")
+					a(href = paper.path) 
+						img(src="images/pdf.png", width="300px")
+					h5(stlye="word-wrap:'break-word'")=paper.name
 
 		else
 			h3.text-muted There are no papers uploaded yet.
 		
-		
-
 		if user && user.canAccessKeystone
 			p You can add research papers
 			form(method='post', enctype='multipart/form-data')
-			input(type='file', name='imageupload')
-			input(type='submit', name='uploadimage', value='Upload Paper')
+			input(type='file', name='image_upload')
+			input(type='text',name='paper_name', placeholder='Paper name')
+			input(type='submit', name='upload_image', value='Upload Paper')
