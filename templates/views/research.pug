@@ -10,6 +10,8 @@ block content
 		if papers
 			each paper in papers
 				p Should this have a paper description?
+				p needs to be dynamic so that we add papers and it auto adjusts to include them on page
+				p also needs pagination
 				a(href = paper.path) 
 					img(src="images/pdf.png", width="300px")
 				h3=paper.name
