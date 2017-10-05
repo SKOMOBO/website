@@ -2,25 +2,25 @@ extends ../layouts/default
 
 block intro
 	.container
-		h1 some cool papers go here
+		h1 Research papers about the SKOMOBO project
 
 block content
 	.container
 
 		if papers
 			each paper in papers
-				p pdf logo in square
-				h1=paper.name
+				p Should this have a paper description?
+				a(href = paper.path) 
+					img(src="images/pdf.png", width="300px")
+				h3=paper.name
+
 		else
 			h3.text-muted There are no papers uploaded yet.
 		
-		a(href = "google.com") example link we need them to be linked too
+		
 
 		if user && user.canAccessKeystone
 			p You can add research papers
 			form(method='post', enctype='multipart/form-data')
 			input(type='file', name='imageupload')
 			input(type='submit', name='uploadimage', value='Upload Paper')
-
-		else 
-			p you can only read papers
